@@ -10,7 +10,7 @@ from project import app
 
 class TestDevelopmentConfig(TestCase):
     def create_app(self):
-        app.config.from_project('project.config.DevelopmentConfig')
+        app.config.from_object('project.config.DevelopmentConfig')
         return app
 
     def test_app_is_development(self):
