@@ -3,11 +3,10 @@ version: '2.1'
 services:
 
   users-db:
-    restart: always
     container_name: users-db
     build: ./project/db
     ports:
-      - 5435:5432  # expose ports - HOST:CONTAINER
+        - 5435:5432  # expose ports - HOST:CONTAINER
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -15,11 +14,10 @@ services:
       test: exit 0
 
   users-service:
-    restart: always
     container_name: users-service
     build: ./
     volumes:
-      - .:/usr/src/app
+      - '.:/usr/src/app'
     ports:
       - 5001:5000 # expose ports - HOST:CONTAINER
     environment:
