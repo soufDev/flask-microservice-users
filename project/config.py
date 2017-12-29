@@ -1,4 +1,6 @@
-# project/config
+# project/config.py
+
+
 import os
 
 
@@ -10,13 +12,13 @@ class BaseConfig:
 
 
 class DevelopmentConfig(BaseConfig):
-    """Development Config"""
+    """Development configuration"""
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 
 class TestingConfig(BaseConfig):
-    """Testing Configuration"""
+    """Testing configuration"""
     DEBUG = True
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_TEST_URL')
